@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteBase /400009953/
+
+RewriteRule ^(App|Framework)/ /400009953/ [R=301,L]
+
+# I don't use any css / js files so won't be having them in the rewrite
+
+RewriteRule ^\. - [F,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
